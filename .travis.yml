@@ -6,4 +6,5 @@ node_js:
 install:
   - yarn install
 script:
+  - ci/scripts/git_config.sh
   - ci/scripts/build.sh
