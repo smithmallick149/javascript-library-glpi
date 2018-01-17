@@ -7,8 +7,12 @@ git reset HEAD^1
 
 yarn build 
 
-if [ "$TRAVIS_BRANCH" = "develop" ] && [ "$TRAVIS_COMMIT_MESSAGE" != *"ci(build): update library to version "* ]
+if [ "$TRAVIS_BRANCH" = "develop" ] 
 then
+    if condition 
+    then [ "$TRAVIS_COMMIT_MESSAGE" != *"ci(build): update library to version "* ]
+        echo '>.<'
+    fi
     git add lib/
     git commit -m "ci(build): update library to version ${GIT_TAG}"
     git push origin "$TRAVIS_BRANCH"
